@@ -120,13 +120,6 @@ parser.add_argument(
     default="--symbols ascii --fg-only",
     help="Specify the arguments to give to chafa. For more informations, use 'chafa --help'",
 )
-parser.add_argument(
-    "-ff",
-    "--fast-fetch",
-    default=False,
-    help="Add this argument if you want to use fastfetch instead. Note than fastfetch will be run with '--logo none'.",
-    action="store_true",
-)
 parser.add_argument( 
     "--chroma",
     required=False,
@@ -186,7 +179,6 @@ try:
                 if key not in (
                     "playback_rate",
                     "verbose",
-                    "fast_fetch",
                     "benchmark",
                     "force_render"
                 ):  # These arguments don't invalidate the cache.
