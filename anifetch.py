@@ -280,7 +280,6 @@ try:
                         f"{key} INVALID! Will cache again. Value:{value} Cache:{cached_value}",
                     )
                     should_update = True
-                    print_verbose("Cache invalid, will cache again.")
 except FileNotFoundError:
     should_update = True
 
