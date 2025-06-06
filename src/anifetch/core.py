@@ -18,6 +18,7 @@ from .utils import (
     get_text_length_of_formatted_text,
     get_ext_from_codec,
     get_data_path,
+    get_asset_path,
     get_video_dimensions,
     get_neofetch_status,
     render_frame,
@@ -335,8 +336,8 @@ def run_anifetch(args):
     BOTTOM = HEIGHT
 
     bash_script_name = "anifetch-static-resize2.sh"
-    script_dir = pathlib.Path(__file__).parent
-    bash_script_path = script_dir / bash_script_name
+    bash_script_path = get_asset_path("anifetch", bash_script_name)
+
 
     if not args.benchmark:
         try:

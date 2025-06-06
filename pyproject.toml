@@ -18,11 +18,9 @@ dependencies = [
 anifetch = "anifetch.__init__:main"
 
 [tool.setuptools]
-packages = ["anifetch"]
+packages = ["anifetch", "anifetch.assets"]
 package-dir = { "" = "src" }
 
 [tool.setuptools.package-data]
-anifetch = [
-    "assets/*",
-    "anifetch-static-resize2.sh"
-]
+"anifetch.assets" = ["*.mp4"]
+anifetch = ["anifetch-static-resize2.sh"]

@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument(
         "filename",
         nargs="?",
-        default=str(get_asset_path("example.mp4")),
+        default=str(get_asset_path("anifetch.assets","example.mp4")),
         help="Video file to use (default: example.mp4)",
         type=str,
     )

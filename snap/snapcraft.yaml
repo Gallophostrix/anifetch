@@ -1,6 +1,6 @@
 name: anifetch
 base: core22
-version: "1.0"
+version: "1.0.0"
 summary: Anifetch - Animated terminal fetch with video/audio support.
 description: |
   Anifetch is a terminal fetch tool that displays system information with animated ASCII art and supports video and audio playback. It is inspired by Neofetch and Fastfetch, but with a focus on animation and multimedia.
@@ -16,34 +16,22 @@ confinement: strict
 apps:
   anifetch:
     command: bin/anifetch
-    # command-chain:
-    #   - command-chain/ffmpeg-env.sh
     plugs:
       - home
       - audio-playback
       - removable-media
+      - desktop
 
 parts:
   anifetch:
-    source: . # https://github.com/Gallophostrix/anifetch
     plugin: python
-    override-build: |
-      craftctl default
-      mkdir -p $CRAFT_PART_INSTALL/lib/anifetch/assets
-      cp -r assets/* $CRAFT_PART_INSTALL/lib/anifetch/assets
-    #   install -Dm755 scripts/ffmpeg-env.sh $SNAPCRAFT_PART_INSTALL/command-chain/ffmpeg-env.sh
+    source: . # https://github.com/Gallophostrix/anifetch
     stage-packages:
-      - ffmpeg
+      # - ffmpeg
       - chafa
       - neofetch
-  # ffmpeg-deps:
-  #   plugin: nil
-  #   stage-packages:
-  #     - ffmpeg
-  #     - libpulse0
-  #     - libpulse-mainloop-glib0
-  #     - libblas3
-  #   prime:
-  #     - -usr/share/doc
-  #     - -usr/share/man
-  #     - -usr/share/locale
+      # - fastfetch
+      - bc
+    override-build: |
+      craftctl default
+      chmod +x $(find $CRAFT_PART_INSTALL/lib -type f -name anifetch-static-resize2.sh)

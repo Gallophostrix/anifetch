@@ -94,9 +94,9 @@ def get_data_path():
     return path
 
 
-def get_asset_path(filename):
+def get_asset_path(folder : str, filename : str):
     try:
-        return files("anifetch.assets") / filename
+        return files(folder) / filename
     except Exception as e:
         print(f"[ERROR] Could not find asset: {filename}")
         raise
