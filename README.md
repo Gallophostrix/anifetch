@@ -9,7 +9,7 @@ You need `bc` to be installed. For debian/ubuntu it's `apt install bc`. For Arch
 
 You need `chafa` to be installed. For debian/ubuntu it is `apt install chafa`. [Download Instructions](https://hpjansson.org/chafa/download/)
 
-If you don't have ffmpeg, download it here: [ffmpeg download](https://www.ffmpeg.org/download.html)
+You need `ffmpeg` to be installed. For debian/ubuntu it is `apt install ffmpeg`. [Download Instructions](https://www.ffmpeg.org/download.html)
 
 Clone the git repo.
 
