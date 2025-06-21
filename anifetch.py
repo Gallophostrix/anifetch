@@ -232,7 +232,7 @@ if not (BASE_PATH / "output").exists():
     os.mkdir(BASE_PATH / "output")
 
 if not pathlib.Path(args.filename).exists():
-    print("Couldn't find file", pathlib.Path(args.filename))
+    print("Couldn't find file", pathlib.Path(args.filename), "\nMake sure the file exists or is in the correct directory.")
     raise FileNotFoundError(args.filename)
 
 
